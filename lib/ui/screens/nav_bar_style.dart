@@ -13,11 +13,17 @@ class NavBarStyle extends StatefulWidget {
 }
 
 class _NavBarStyleState extends State<NavBarStyle> {
+  int? _selectedIndex;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    context.read<SelectNavbarBloc>().add(SelectNavbarEventInitial());
+  }
 
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
-
     return Scaffold(
         backgroundColor: Color(0xFF101315),
         appBar: AppBar(
@@ -55,56 +61,67 @@ class _NavBarStyleState extends State<NavBarStyle> {
             return Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    RadioListTile(
-                      value: 0,
-                      activeColor: Color(0xFF00B36F),
-                      groupValue: _selectedIndex,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedIndex = value!;
-                        });
-                        context.read<SelectNavbarBloc>().add(
-                              SelectNavbarEventChange(index: value!),
-                            );
-                      },
-                      title: Text(
-                        'Hiện đại',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: Colors.white,
+                Container(
+                  // color: Colors.amberAccent,
+                  child: Column(
+                    children: [
+                      RadioListTile(
+                        value: 0,
+                        activeColor: Color(0xFF00B36F),
+                        groupValue: _selectedIndex,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedIndex = value as int;
+                          });
+                          context.read<SelectNavbarBloc>().add(
+                                SelectNavbarEventChange(index: value as int),
+                              );
+                        },
+                        title: Text(
+                          'Hiện đại',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    ModernNavbar(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    RadioListTile(
-                      value: 1,
-                      activeColor: Color(0xFF00B36F),
-                      groupValue: _selectedIndex,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedIndex = value!;
-                        });
-                        context.read<SelectNavbarBloc>().add(
-                              SelectNavbarEventChange(index: value!),
-                            );
-                      },
-                      title: Text(
-                        'Cổ điển',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: Colors.white,
+                      ModernNavbar(),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      RadioListTile(
+                        value: 1,
+                        activeColor: Color(0xFF00B36F),
+                        groupValue: _selectedIndex,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedIndex = value as int;
+                          });
+                          context.read<SelectNavbarBloc>().add(
+                                SelectNavbarEventChange(index: value as int),
+                              );
+                        },
+                        title: Text(
+                          'Cổ điển',
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    ClassicNavbar(),
-                  ],
+                      ClassicNavbar(),
+                    ],
+                  ),
                 ),
-                BottomAppBar(),
+                Container(
+                  child: state.index == 1
+                      ? ClassicNavbar()
+                      : state.index == 0
+                          ? ModernNavbar()
+                          : Container(
+                              child: Text('Error'),
+                            ),
+                )
               ],
             );
           },
