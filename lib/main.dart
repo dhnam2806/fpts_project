@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
-import 'package:fpts_product/ui/screens/nav_bar_setting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/ui/screens/swap_theme/swap_theme_setting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      child: NavBarSettingScreen(),
+      child: SwapThemeSetting(),
     );
   }
 }
