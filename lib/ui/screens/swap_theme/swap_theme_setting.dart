@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fpts_product/ui/screens/swap_theme/selected_theme.dart';
+import 'package:fpts_product/ui/screens/swap_theme/swap_theme_style.dart';
 import 'package:fpts_product/ui/widgets/radio_list_tile/radio_list_title.dart';
 
 class SwapThemeSetting extends StatefulWidget {
@@ -13,11 +13,6 @@ class SwapThemeSetting extends StatefulWidget {
 class _SwapThemeSettingState extends State<SwapThemeSetting>
     with TickerProviderStateMixin {
   int _selectedIndex = 0;
-
-  late final AnimationController controller = AnimationController(
-    duration: const Duration(seconds: 2),
-    vsync: this,
-  )..forward();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +32,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
             'Chủ đề',
             style: TextStyle(
               letterSpacing: 1,
-              fontSize: 18.sp,
+              fontSize: 20.sp,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -81,23 +76,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
               ),
               _selectedIndex == 0
                   ? Container()
-                  : Expanded(
-                      child: SlideTransition(
-                        position: Tween<Offset>(
-                          begin: Offset(0, 0),
-                          end: Offset.zero,
-                        ).animate(CurvedAnimation(
-                          parent: AnimationController(
-                            vsync: this,
-                            duration: Duration(milliseconds: 500),
-                          ),
-                          curve: Curves.fastOutSlowIn,
-                        )),
-                        child: Expanded(
-                          child: SelectedTheme(),
-                        ),
-                      ),
-                    ),
+                  : Expanded(child: TabBarThemeStyle()),
             ],
           ),
         ));

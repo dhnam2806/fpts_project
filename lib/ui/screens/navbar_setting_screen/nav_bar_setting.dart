@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:fpts_product/ui/bottom_navbar.dart';
-import 'package:fpts_product/ui/screens/nav_bar_style.dart';
+import 'package:fpts_product/ui/screens/navbar_setting_screen/nav_bar_style.dart';
 import 'package:fpts_product/ui/widgets/list_tittle/list_tittle_navbar_setting.dart';
 
 class NavBarSettingScreen extends StatefulWidget {

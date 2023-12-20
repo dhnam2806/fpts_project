@@ -15,40 +15,35 @@ class _SelectedThemeState extends State<SelectedTheme> {
 
   final listTheme = [
     Container(
-      width: 180,
-      height: 200,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.red,
         borderRadius: BorderRadius.circular(8),
       ),
     ),
     Container(
-      width: 180,
-      height: 200,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.green,
         borderRadius: BorderRadius.circular(8),
       ),
     ),
     Container(
-      width: 180,
-      height: 200,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.circular(8),
       ),
     ),
     Container(
-      width: 180,
-      height: 200,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.orange,
         borderRadius: BorderRadius.circular(8),
       ),
     ),
     Container(
-      width: 180,
-      height: 200,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.teal,
         borderRadius: BorderRadius.circular(8),
@@ -58,45 +53,35 @@ class _SelectedThemeState extends State<SelectedTheme> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xFF191D1F),
-      child: Column(
-        children: [
-          Text(
-            'Chủ đề',
-            style: TextStyle(
-              fontSize: 15.sp,
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          SizedBox(height: 16),
-          CarouselSlider.builder(
-            itemCount: listTheme.length,
-            itemBuilder: (BuildContext context, int index, int realIndex) {
-              return listTheme[index];
+    return Column(
+      children: [
+        CarouselSlider.builder(
+          itemCount: listTheme.length,
+          itemBuilder: (BuildContext context, int index, int realIndex) {
+            return listTheme[index];
+          },
+          options: CarouselOptions(
+            enlargeFactor: 0.5,
+            aspectRatio: 1,
+            viewportFraction: 0.5,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: false,
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true,
+            scrollDirection: Axis.horizontal,
+            onPageChanged: (index, reason) {
+              setState(() {
+                activeIndex = index;
+              });
             },
-            options: CarouselOptions(
-              viewportFraction: 0.4,
-              enableInfiniteScroll: true,
-              reverse: false,
-              autoPlay: false,
-              autoPlayInterval: Duration(seconds: 3),
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enlargeCenterPage: true,
-              scrollDirection: Axis.horizontal,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  activeIndex = index;
-                });
-              },
-            ),
           ),
-          SizedBox(height: 16),
-          _buildIndicator(),
-        ],
-      ),
+        ),
+        SizedBox(height: 16.h),
+        _buildIndicator(),
+      ],
     );
   }
 

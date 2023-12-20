@@ -27,10 +27,13 @@ class _RadioListTitleCustomState extends State<RadioListTitleCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF191D1F),
+      decoration: BoxDecoration(
+        color: Color(0xFF191D1F),
+        borderRadius: BorderRadius.circular(12.r),
+      ),
       child: RadioListTile(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           value: widget.value,
           activeColor: Color(0xFF00B36F),
@@ -44,7 +47,7 @@ class _RadioListTitleCustomState extends State<RadioListTitleCustom> {
               Text(
                 widget.title,
                 style: TextStyle(
-                  fontSize: 15.sp,
+                  fontSize: 16.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                 ),
@@ -55,7 +58,7 @@ class _RadioListTitleCustomState extends State<RadioListTitleCustom> {
               Text(
                 widget.description,
                 style: TextStyle(
-                  fontSize: 13.sp,
+                  fontSize: 14.sp,
                   color: Colors.grey[600],
                 ),
               ),
