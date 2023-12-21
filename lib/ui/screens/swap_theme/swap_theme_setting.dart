@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/ui/screens/swap_theme/swap_theme_style.dart';
-import 'package:fpts_product/ui/widgets/radio_list_tile/radio_list_title.dart';
+import 'package:fpts_product/ui/widgets/radio_list_tile/radio_custom.dart';
 
 class SwapThemeSetting extends StatefulWidget {
   const SwapThemeSetting({super.key});
@@ -45,29 +45,29 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
           ),
           child: Column(
             children: [
-              RadioListTitleCustom(
+              RadioCustom(
                 value: 0,
                 groupValue: _selectedIndex,
                 title: "Tự động",
                 description:
                     'Ảnh chủ đề sẽ thay đổi tự động theo thời gian trong ngày và trong năm vào các dịp đặc biệt.',
-                onTap: () {
+                onChanged: (int value) {
                   setState(() {
-                    _selectedIndex = 0;
+                    _selectedIndex = value;
                   });
                 },
               ),
               SizedBox(
                 height: 12.h,
               ),
-              RadioListTitleCustom(
+              RadioCustom(
                 value: 1,
                 groupValue: _selectedIndex,
                 title: "Thủ công",
                 description: 'Tự chọn ảnh chủ đề theo sở thích của bạn.',
-                onTap: () {
+                onChanged: (int value) {
                   setState(() {
-                    _selectedIndex = 1;
+                    _selectedIndex = value;
                   });
                 },
               ),
