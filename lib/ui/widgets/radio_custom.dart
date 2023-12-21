@@ -52,7 +52,7 @@ class _RadioCustomState extends State<RadioCustom> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: isSelected ? Colors.green : Colors.grey[600]!,
-                    width: 4,
+                    width: isSelected ? 4 : 0,
                   ),
                   shape: BoxShape.circle,
                 ),

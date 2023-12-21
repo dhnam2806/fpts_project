@@ -36,47 +36,42 @@ class _SelectedContainerState extends State<SelectedContainer> {
       },
       child: Column(
         children: [
-          Container(
-            decoration: isSelected
-                ? BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(
-                      color: Colors.green,
-                      width: 2,
-                    ))
-                : BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-            child: Stack(alignment: Alignment.topRight, children: [
-              Container(
-                  width: double.infinity,
-                  height: 300.h,
-                  decoration: BoxDecoration(
-                    color: widget.color,
-                    borderRadius: BorderRadius.circular(12.r),
-                  )),
-              Container(
-                margin: EdgeInsets.all(8),
-                width: 24.w,
-                height: 24.h,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: isSelected ? Colors.transparent : Colors.grey,
-                    width: 1,
-                  ),
-                  shape: BoxShape.circle,
-                  color: isSelected ? Colors.green : Colors.grey[300],
-                ),
-                child: isSelected
-                    ? Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 16.sp,
+          Stack(alignment: Alignment.topRight, children: [
+            Container(
+              width: double.infinity,
+              height: 300.h,
+              decoration: BoxDecoration(
+                color: widget.color,
+                borderRadius: BorderRadius.circular(12.r),
+                border: isSelected
+                    ? Border.all(
+                        color: Colors.green,
+                        width: 2,
                       )
                     : null,
               ),
-            ]),
-          ),
+            ),
+            Container(
+              margin: EdgeInsets.all(8),
+              width: 22.w,
+              height: 22.h,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: isSelected ? Colors.transparent : Colors.grey,
+                  width: 1,
+                ),
+                shape: BoxShape.circle,
+                color: isSelected ? Colors.green : Colors.grey[300],
+              ),
+              child: isSelected
+                  ? Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 16.sp,
+                    )
+                  : null,
+            ),
+          ]),
           SizedBox(
             height: 12.h,
           ),
