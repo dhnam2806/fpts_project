@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/ui/screens/swap_theme/swap_theme_style.dart';
-import 'package:fpts_product/ui/widgets/radio_list_tile/radio_custom.dart';
+import 'package:fpts_product/ui/widgets/radio_custom.dart';
 
 class SwapThemeSetting extends StatefulWidget {
   const SwapThemeSetting({super.key});
