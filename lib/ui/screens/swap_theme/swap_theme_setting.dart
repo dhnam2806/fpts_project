@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/screens/swap_theme/swap_theme_style.dart';
 import 'package:fpts_product/ui/widgets/radio_custom.dart';
 
@@ -17,23 +18,23 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF101315),
+        backgroundColor: AppColors.bg_01,
         appBar: AppBar(
           centerTitle: true,
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.grey[600],
+              color: AppColors.gray,
             ),
             onPressed: () {},
           ),
-          backgroundColor: Color(0xFF101315),
+          backgroundColor: AppColors.bg_01,
           title: Text(
             'Chủ đề',
             style: TextStyle(
               letterSpacing: 1,
               fontSize: 20.sp,
-              color: Colors.white,
+              color: AppColors.white,
               fontWeight: FontWeight.w500,
             ),
           ),

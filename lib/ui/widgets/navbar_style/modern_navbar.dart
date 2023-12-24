@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class ModernNavbar extends StatefulWidget {
@@ -18,7 +18,7 @@ class _ModernNavbarState extends State<ModernNavbar> {
         horizontal: 8.w,
       ),
       decoration: BoxDecoration(
-        color: Color(0xFF191D1F),
+        color: AppColors.bg_02,
         borderRadius: BorderRadius.circular(16.r),
       ),
       child: GNav(
@@ -29,11 +29,11 @@ class _ModernNavbarState extends State<ModernNavbar> {
           vertical: 20.h,
         ),
         // backgroundColor: Color(0xFF191D1F),
-        color: Color(0xFF00B36F),
-        activeColor: Color(0xFF00B36F),
+        color: AppColors.green,
+        activeColor: AppColors.green,
         textStyle: TextStyle(
           fontSize: 12.sp,
-          color: Color(0xFF00B36F),
+          color: AppColors.green,
         ),
         tabs: [
           GButton(
@@ -61,4 +61,3 @@ class _ModernNavbarState extends State<ModernNavbar> {
     );
   }
 }
-

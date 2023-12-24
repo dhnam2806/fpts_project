@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SelectedTheme extends StatefulWidget {
@@ -90,7 +91,7 @@ class _SelectedThemeState extends State<SelectedTheme> {
       activeIndex: activeIndex,
       count: listTheme.length,
       effect: ExpandingDotsEffect(
-        activeDotColor: Color(0xFF00B36F),
+        activeDotColor: AppColors.green,
         dotColor: Color(0xFF272B30),
         dotHeight: 8,
         dotWidth: 8,

@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 
 class SelectedContainer extends StatefulWidget {
   String title;
@@ -45,7 +46,7 @@ class _SelectedContainerState extends State<SelectedContainer> {
                 borderRadius: BorderRadius.circular(12.r),
                 border: isSelected
                     ? Border.all(
-                        color: Colors.green,
+                        color: AppColors.green,
                         width: 2,
                       )
                     : null,
@@ -61,7 +62,7 @@ class _SelectedContainerState extends State<SelectedContainer> {
                   width: 1,
                 ),
                 shape: BoxShape.circle,
-                color: isSelected ? Colors.green : Colors.grey[300],
+                color: isSelected ? AppColors.green : Colors.grey[300],
               ),
               child: isSelected
                   ? Icon(
@@ -79,7 +80,7 @@ class _SelectedContainerState extends State<SelectedContainer> {
             widget.title,
             style: TextStyle(
               fontSize: 14.sp,
-              color: isSelected ? Colors.green : Colors.grey[400],
+              color: isSelected ? AppColors.green : AppColors.gray,
               fontWeight: FontWeight.w500,
             ),
           ),

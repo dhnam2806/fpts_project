@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/widgets/radio_custom.dart';
 import 'package:fpts_product/ui/widgets/selected_container.dart';
 
@@ -17,23 +18,23 @@ class _ScreenModeState extends State<ScreenMode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF101315),
+      backgroundColor: AppColors.bg_01,
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.grey[600],
+            color: AppColors.gray,
           ),
           onPressed: () {},
         ),
-        backgroundColor: Color(0xFF101315),
+        backgroundColor: AppColors.bg_01,
         title: Text(
           'Chế độ màn hình',
           style: TextStyle(
             letterSpacing: 1,
             fontSize: 20.sp,
-            color: Colors.white,
+            color: AppColors.white,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -62,7 +63,7 @@ class _ScreenModeState extends State<ScreenMode> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Color(0xFF191D1F),
+                color: AppColors.bg_02,
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Column(

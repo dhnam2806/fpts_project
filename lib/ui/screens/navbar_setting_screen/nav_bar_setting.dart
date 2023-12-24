@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/bottom_navbar.dart';
 import 'package:fpts_product/ui/screens/navbar_setting_screen/nav_bar_style.dart';
 import 'package:fpts_product/ui/widgets/list_tittle_navbar_setting.dart';
@@ -25,7 +26,7 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF101315),
+        backgroundColor: AppColors.bg_01,
         appBar: AppBar(
           centerTitle: true,
           leading: IconButton(
@@ -35,7 +36,7 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
             ),
             onPressed: () {},
           ),
-          backgroundColor: Color(0xFF101315),
+          backgroundColor: AppColors.bg_01,
           title: Text(
             'Thanh điều hướng',
             style: TextStyle(
@@ -57,7 +58,7 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: Color(0xFF191D1F),
+                    color: AppColors.bg_02,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(children: [

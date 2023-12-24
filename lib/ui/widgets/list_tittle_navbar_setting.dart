@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 
 class ListTittleCustom extends StatefulWidget {
   final String title;
@@ -22,19 +23,19 @@ class _ListTittleCustomState extends State<ListTittleCustom> {
     return ListTile(
       leading: Icon(
         widget.icon,
-        color: Colors.grey[600],
+        color: AppColors.gray,
       ),
       title: Text(
         widget.title,
         style: TextStyle(
           fontSize: 14.sp,
-          color: Colors.white,
+          color: AppColors.white,
         ),
       ),
       trailing: Icon(
         Icons.arrow_forward_ios,
         size: 20,
-        color: Colors.grey[600],
+        color: AppColors.gray,
       ),
       onTap: () {
         widget.onTap();

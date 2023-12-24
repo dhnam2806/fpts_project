@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/screens/swap_theme/selected_theme.dart';
 
 class TabBarThemeStyle extends StatefulWidget {
@@ -16,7 +17,7 @@ class _TabBarThemeStyleState extends State<TabBarThemeStyle>
     TabController _tabController = TabController(length: 4, vsync: this);
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF191D1F),
+        color: AppColors.bg_02,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20.r),
           topRight: Radius.circular(20.r),
@@ -27,13 +28,13 @@ class _TabBarThemeStyleState extends State<TabBarThemeStyle>
           Container(
             margin: EdgeInsets.all(8.w),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 20, 22, 23),
+              color: AppColors.blue_gray_01,
               borderRadius: BorderRadius.circular(50.r),
             ),
             child: TabBar(
-              indicatorColor: Color(0xFF00B36F),
-              labelColor: Color(0xFF00B36F),
-              unselectedLabelColor: Colors.grey[600],
+              indicatorColor: AppColors.green,
+              labelColor: AppColors.green,
+              unselectedLabelColor: AppColors.gray,
               automaticIndicatorColorAdjustment: false,
               dividerColor: Colors.transparent,
               controller: _tabController,
