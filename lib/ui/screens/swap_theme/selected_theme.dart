@@ -15,72 +15,49 @@ class _SelectedThemeState extends State<SelectedTheme> {
   int activeIndex = 0;
 
   final listTheme = [
-    Container(
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-    Container(
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-    Container(
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-    Container(
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.orange,
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-    Container(
-      height: 400,
-      decoration: BoxDecoration(
-        color: Colors.teal,
-        borderRadius: BorderRadius.circular(8),
-      ),
-    )
+    'assets/images/birthday.png',
+    'assets/images/giangsinh.png',
+    'assets/images/halloween.png',
+    'assets/images/nammoi.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CarouselSlider.builder(
-          itemCount: listTheme.length,
-          itemBuilder: (BuildContext context, int index, int realIndex) {
-            return listTheme[index];
-          },
+        CarouselSlider(
           options: CarouselOptions(
-            enlargeFactor: 0.5,
-            aspectRatio: 1,
-            viewportFraction: 0.5,
-            enableInfiniteScroll: true,
-            reverse: false,
-            autoPlay: false,
-            autoPlayInterval: Duration(seconds: 3),
-            autoPlayAnimationDuration: Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeFactor: 0.4,
             enlargeCenterPage: true,
-            scrollDirection: Axis.horizontal,
+            aspectRatio: 1,
+            enableInfiniteScroll: true,
+            viewportFraction: 0.6,
             onPageChanged: (index, reason) {
               setState(() {
                 activeIndex = index;
               });
             },
           ),
+          items: listTheme.map((imagePath) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                    image: DecorationImage(
+                      image: AssetImage(imagePath),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                );
+              },
+            );
+          }).toList(),
         ),
-        SizedBox(height: 16.h),
+        SizedBox(
+          height: 16.h,
+        ),
         _buildIndicator(),
       ],
     );

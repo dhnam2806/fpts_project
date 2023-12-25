@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/ui/screens/screen_mode/screen_mode.dart';
+import 'package:fpts_product/ui/screens/swap_theme/swap_theme_setting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
               }),
         );
       },
-      child: ScreenMode(),
+      child: SwapThemeSetting(),
     );
   }
 }
