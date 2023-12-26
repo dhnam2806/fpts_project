@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fpts_product/ui/main_screen.dart';
 import 'package:fpts_product/ui/screens/home_content/home_content_sceen.dart';
 import 'package:fpts_product/ui/screens/screen_mode/screen_mode.dart';
 import 'package:fpts_product/ui/screens/swap_theme/swap_theme_setting.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               }),
         );
       },
-      child: HomeContentScreen(),
+      child: MainScreen(),
     );
   }
 }

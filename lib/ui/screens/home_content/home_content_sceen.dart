@@ -38,7 +38,9 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
               Icons.arrow_back,
               color: AppColors.gray,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           backgroundColor: AppColors.bg_01,
           title: Text(
@@ -90,7 +92,8 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                             }
                           });
                         },
-                        child: ListContent(title: listContent[index], isSelected: isSelected));
+                        child: ListContent(
+                            title: listContent[index], isSelected: isSelected));
                   },
                 ),
               ),

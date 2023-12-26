@@ -34,7 +34,9 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
               Icons.arrow_back,
               color: Colors.grey[600],
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           backgroundColor: AppColors.bg_01,
           title: Text(

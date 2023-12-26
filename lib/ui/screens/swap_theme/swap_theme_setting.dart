@@ -26,7 +26,9 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
               Icons.arrow_back,
               color: AppColors.gray,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           backgroundColor: AppColors.bg_01,
           title: Text(
