@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
@@ -12,7 +14,7 @@ class HomeContentScreen extends StatefulWidget {
 
 class _HomeContentScreenState extends State<HomeContentScreen> {
   final listContent = [
-    'Chỉ sô thị trường',
+    'Chỉ số thị trường',
     'Tài sản',
     'Nhóm cổ phiếu',
     'Khuyến nghị đầu tư',
@@ -27,10 +29,25 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
 
   Set<String> selectedItems = Set<String>();
 
+  Widget _proxyDecorator(Widget child, int index, Animation<double> animation) {
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (BuildContext context, Widget? child) {
+        final double animValue = Curves.easeInOut.transform(animation.value);
+        final double elevation = lerpDouble(0, 6, animValue)!;
+        return Material(
+          elevation: elevation,
+          color: Colors.transparent,
+          shadowColor: Colors.transparent,
+          child: child,
+        );
+      },
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    int? draggingIndex;
-
     return Scaffold(
         backgroundColor: AppColors.surface_01,
         appBar: AppBar(
@@ -81,50 +98,39 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                 height: 16.h,
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: listContent.length,
-                  itemBuilder: (context, index) {
-                    final item = listContent[index];
-                    final isSelected = selectedItems.contains(item);
-                    return LongPressDraggable(
-                      data: item,
-                      // child: DraggableItem(
-                      //   item: item[index],
-                      //   isDragging: index == draggingIndex,
-                      // ),
-                      feedback: ListContent(
-                          title: listContent[index], isSelected: isSelected),
-                      childWhenDragging: Container(),
-                      onDragStarted: () {
-                        setState(() {
-                          draggingIndex = index;
-                        });
-                      },
-                      onDragEnd: (details) {
-                        setState(() {
-                          draggingIndex = null;
-                        });
-                      },
-                      // onDraggableCanceled: (velocity, offset) {
-                      //   setState(() {
-                      //     draggingIndex = null;
-                      //   });
-                      // },
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            if (isSelected) {
-                              selectedItems.remove(item);
-                            } else {
-                              selectedItems.add(item);
-                            }
-                          });
-                        },
-                        child: ListContent(
-                            title: listContent[index], isSelected: isSelected),
-                      ),
-                    );
-                  },
+                child: Theme(
+                  data: ThemeData(
+                    canvasColor: AppColors.bg_01,
+                  ),
+                  child: ReorderableListView(
+                    proxyDecorator: _proxyDecorator,
+                    children: [
+                      for (final item in listContent)
+                        ListContent(
+                          key: ValueKey(item),
+                          title: item,
+                          isSelected: selectedItems.contains(item),
+                          onTap: () {
+                            setState(() {
+                              if (selectedItems.contains(item)) {
+                                selectedItems.remove(item);
+                              } else {
+                                selectedItems.add(item);
+                              }
+                            });
+                          },
+                        ),
+                    ],
+                    onReorder: (oldIndex, newIndex) {
+                      setState(() {
+                        if (oldIndex < newIndex) {
+                          newIndex -= 1;
+                        }
+                        final item = listContent.removeAt(oldIndex);
+                        listContent.insert(newIndex, item);
+                      });
+                    },
+                  ),
                 ),
               ),
             ],
@@ -133,25 +139,3 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
   }
 }
 
-class DraggableItem extends StatelessWidget {
-  final String item;
-  final bool isDragging;
-
-  DraggableItem({required this.item, required this.isDragging});
-
-  @override
-  Widget build(BuildContext context) {
-    return Opacity(
-      opacity: isDragging ? 0.5 : 1.0,
-      child: Container(
-        height: 50,
-        color: Colors.blue,
-        alignment: Alignment.center,
-        child: Text(
-          item,
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-  }
-}
