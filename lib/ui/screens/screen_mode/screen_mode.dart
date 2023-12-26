@@ -24,7 +24,8 @@ class _ScreenModeState extends State<ScreenMode> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: AppColors.gray,
+            color: AppColors.header,
+            size: 24,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -34,10 +35,11 @@ class _ScreenModeState extends State<ScreenMode> {
         title: Text(
           'Chế độ màn hình',
           style: TextStyle(
+            fontFamily: 'Manrope',
             letterSpacing: 1,
-            fontSize: 20.sp,
-            color: AppColors.white,
-            fontWeight: FontWeight.w500,
+            fontSize: 24.sp,
+            color: AppColors.header,
+            fontWeight: FontWeight.w800,
           ),
         ),
       ),
@@ -84,7 +86,8 @@ class _ScreenModeState extends State<ScreenMode> {
                   _selectedIndex == 0
                       ? Container()
                       : Container(
-                          padding: EdgeInsets.only(bottom: 16.h, left: 60.w),
+                          padding: EdgeInsets.only(
+                              bottom: 12.h, left: 58.w, right: 12.w),
                           child: Row(children: [
                             Expanded(
                               child: SelectedContainer(
@@ -105,16 +108,13 @@ class _ScreenModeState extends State<ScreenMode> {
                               child: SelectedContainer(
                                   title: "Sáng",
                                   value: 1,
-                                  color: Colors.white70,
+                                  color: Color(0xFFFEFEFE),
                                   groupValue: _selectedTheme,
                                   onChanged: (int value) {
                                     setState(() {
                                       _selectedTheme = value;
                                     });
                                   }),
-                            ),
-                            SizedBox(
-                              width: 16.w,
                             ),
                           ]),
                         ),

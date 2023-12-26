@@ -23,43 +23,57 @@ class _SelectedThemeState extends State<SelectedTheme> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CarouselSlider(
-          options: CarouselOptions(
-            enlargeFactor: 0.4,
-            enlargeCenterPage: true,
-            aspectRatio: 1,
-            enableInfiniteScroll: true,
-            viewportFraction: 0.6,
-            onPageChanged: (index, reason) {
-              setState(() {
-                activeIndex = index;
-              });
-            },
-          ),
-          items: listTheme.map((imagePath) {
-            return Builder(
-              builder: (BuildContext context) {
-                return Container(
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                    image: DecorationImage(
-                      image: AssetImage(imagePath),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                );
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          CarouselSlider(
+            options: CarouselOptions(
+              enlargeFactor: 0.5,
+              enlargeCenterPage: true,
+              aspectRatio: 1,
+              enableInfiniteScroll: true,
+              viewportFraction: 0.5,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  activeIndex = index;
+                });
               },
-            );
-          }).toList(),
-        ),
-        SizedBox(
-          height: 16.h,
-        ),
-        _buildIndicator(),
-      ],
+            ),
+            items: listTheme.map((imagePath) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      image: DecorationImage(
+                        image: AssetImage(imagePath),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                },
+              );
+            }).toList(),
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+          _buildIndicator(),
+          SizedBox(
+            height: 12.h,
+          ),
+          Text(
+            'Bản hoà sắc mang hơi hướng tương lai',
+            style: TextStyle(
+              fontFamily: 'Manrope',
+              color: AppColors.secondary,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -67,12 +81,12 @@ class _SelectedThemeState extends State<SelectedTheme> {
     return AnimatedSmoothIndicator(
       activeIndex: activeIndex,
       count: listTheme.length,
-      effect: ExpandingDotsEffect(
+      effect: SlideEffect(
+        dotHeight: 8.h,
+        dotWidth: 8.w,
+        spacing: 8.w,
+        dotColor: AppColors.surface_04,
         activeDotColor: AppColors.green,
-        dotColor: Color(0xFF272B30),
-        dotHeight: 8,
-        dotWidth: 8,
-        spacing: 8,
       ),
     );
   }

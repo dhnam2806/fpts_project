@@ -40,29 +40,31 @@ class _SelectedContainerState extends State<SelectedContainer> {
           Stack(alignment: Alignment.topRight, children: [
             Container(
               width: double.infinity,
-              height: 300.h,
+              height: 320.h,
               decoration: BoxDecoration(
                 color: widget.color,
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(8.r),
                 border: isSelected
                     ? Border.all(
                         color: AppColors.green,
-                        width: 2,
+                        width: 1.14,
                       )
                     : null,
               ),
             ),
             Container(
               margin: EdgeInsets.all(8),
-              width: 22.w,
-              height: 22.h,
+              width: 20.w,
+              height: 20.h,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: isSelected ? Colors.transparent : Colors.grey,
-                  width: 1,
+                  color: isSelected
+                      ? Colors.transparent
+                      : AppColors.border_default,
+                  width: 0.5,
                 ),
                 shape: BoxShape.circle,
-                color: isSelected ? AppColors.green : Colors.grey[300],
+                color: isSelected ? AppColors.green : AppColors.bg_default,
               ),
               child: isSelected
                   ? Icon(
@@ -79,9 +81,10 @@ class _SelectedContainerState extends State<SelectedContainer> {
           Text(
             widget.title,
             style: TextStyle(
+              fontFamily: 'Manrope',
               fontSize: 14.sp,
-              color: isSelected ? AppColors.green : AppColors.gray,
-              fontWeight: FontWeight.w500,
+              color: isSelected ? AppColors.green : AppColors.secondary,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ],

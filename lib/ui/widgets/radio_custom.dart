@@ -38,6 +38,7 @@ class _RadioCustomState extends State<RadioCustom> {
       child: Container(
         padding: EdgeInsets.symmetric(
           vertical: 12,
+          horizontal: 12,
         ),
         decoration: BoxDecoration(
           color: AppColors.bg_02,
@@ -45,25 +46,26 @@ class _RadioCustomState extends State<RadioCustom> {
         ),
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            Container(
+              width: 16.w,
+              height: 16.h,
+              margin: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: isSelected ? AppColors.green : AppColors.gray,
+                  width: isSelected ? 3.5 : 0,
+                ),
+                shape: BoxShape.circle,
+              ),
               child: Container(
-                width: 18.w,
-                height: 18.h,
                 decoration: BoxDecoration(
-                  border: Border.all(
-                    color: isSelected ? AppColors.green : AppColors.gray,
-                    width: isSelected ? 4 : 0,
-                  ),
+                  color: isSelected ? AppColors.white : AppColors.gray,
                   shape: BoxShape.circle,
                 ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: isSelected ? AppColors.white : AppColors.gray,
-                    shape: BoxShape.circle,
-                  ),
-                ),
               ),
+            ),
+            SizedBox(
+              width: 12.w,
             ),
             Expanded(
               child: Column(
@@ -72,21 +74,23 @@ class _RadioCustomState extends State<RadioCustom> {
                   Text(
                     widget.title,
                     style: TextStyle(
-                      fontSize: 16.sp,
-                      color: AppColors.white,
-                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Manrope',
+                      fontSize: 14.sp,
+                      color: AppColors.header,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   SizedBox(
-                    height: 6.h,
+                    height: 4.h,
                   ),
                   Container(
-                    margin: EdgeInsets.only(right: 4.w),
                     child: Text(
                       widget.description,
                       style: TextStyle(
-                        fontSize: 13.sp,
-                        color: AppColors.gray,
+                        fontFamily: 'Manrope',
+                        fontSize: 12.sp,
+                        color: AppColors.secondary,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),

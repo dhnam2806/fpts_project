@@ -29,6 +29,8 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    int? draggingIndex;
+
     return Scaffold(
         backgroundColor: AppColors.surface_01,
         appBar: AppBar(
@@ -36,7 +38,8 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: AppColors.gray,
+              color: AppColors.header,
+              size: 24,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -46,11 +49,12 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
           title: Text(
             'Nội dung trang chủ',
             style: TextStyle(
+              fontFamily: 'Manrope',
               letterSpacing: 1,
               height: 36.h,
               fontSize: 24.sp,
               color: AppColors.white,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w800,
             ),
           ),
         ),
@@ -82,7 +86,31 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                   itemBuilder: (context, index) {
                     final item = listContent[index];
                     final isSelected = selectedItems.contains(item);
-                    return GestureDetector(
+                    return LongPressDraggable(
+                      data: item,
+                      // child: DraggableItem(
+                      //   item: item[index],
+                      //   isDragging: index == draggingIndex,
+                      // ),
+                      feedback: ListContent(
+                          title: listContent[index], isSelected: isSelected),
+                      childWhenDragging: Container(),
+                      onDragStarted: () {
+                        setState(() {
+                          draggingIndex = index;
+                        });
+                      },
+                      onDragEnd: (details) {
+                        setState(() {
+                          draggingIndex = null;
+                        });
+                      },
+                      // onDraggableCanceled: (velocity, offset) {
+                      //   setState(() {
+                      //     draggingIndex = null;
+                      //   });
+                      // },
+                      child: GestureDetector(
                         onTap: () {
                           setState(() {
                             if (isSelected) {
@@ -93,12 +121,37 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                           });
                         },
                         child: ListContent(
-                            title: listContent[index], isSelected: isSelected));
+                            title: listContent[index], isSelected: isSelected),
+                      ),
+                    );
                   },
                 ),
               ),
             ],
           ),
         ));
+  }
+}
+
+class DraggableItem extends StatelessWidget {
+  final String item;
+  final bool isDragging;
+
+  DraggableItem({required this.item, required this.isDragging});
+
+  @override
+  Widget build(BuildContext context) {
+    return Opacity(
+      opacity: isDragging ? 0.5 : 1.0,
+      child: Container(
+        height: 50,
+        color: Colors.blue,
+        alignment: Alignment.center,
+        child: Text(
+          item,
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 }

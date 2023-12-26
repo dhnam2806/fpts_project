@@ -24,7 +24,8 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
           leading: IconButton(
             icon: Icon(
               Icons.arrow_back,
-              color: AppColors.gray,
+              color: AppColors.header,
+              size: 24,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -34,10 +35,11 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
           title: Text(
             'Chủ đề',
             style: TextStyle(
+              fontFamily: 'Manrope',
               letterSpacing: 1,
-              fontSize: 20.sp,
-              color: AppColors.white,
-              fontWeight: FontWeight.w500,
+              fontSize: 24.sp,
+              color: AppColors.header,
+              fontWeight: FontWeight.w800,
             ),
           ),
         ),
@@ -61,7 +63,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
                 },
               ),
               SizedBox(
-                height: 12.h,
+                height: 16.h,
               ),
               RadioCustom(
                 value: 1,
@@ -75,7 +77,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
                 },
               ),
               SizedBox(
-                height: 12.h,
+                height: 14.h,
               ),
               _selectedIndex == 0
                   ? Container()
