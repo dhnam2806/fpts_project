@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/widgets/navbar_style/classic_navbar.dart';
+import 'package:fpts_product/ui/widgets/navbar_style/modern_style.dart';
 import 'package:fpts_product/ui/widgets/navbar_style/modern_navbar.dart';
 
 class NavBarStyle extends StatefulWidget {
@@ -109,6 +110,10 @@ class _NavBarStyleState extends State<NavBarStyle> {
                         ),
                       ),
                       ClassicNavbar(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ModernNavbarStyle(),
                     ],
                   ),
                 ),

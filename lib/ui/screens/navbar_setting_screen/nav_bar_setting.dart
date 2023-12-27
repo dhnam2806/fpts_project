@@ -17,7 +17,6 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     context.read<SelectNavbarBloc>().add(SelectNavbarEventInitial());
   }
