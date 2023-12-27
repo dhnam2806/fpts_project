@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 
 class ListTittleCustom extends StatefulWidget {
-  final String title;
-  final IconData icon;
-  final Function onTap;
+  final title;
+  final icon;
+  final onTap;
   const ListTittleCustom({
     super.key,
-    required this.title,
-    required this.icon,
-    required this.onTap,
+     this.title,
+     this.icon,
+     this.onTap,
   });
 
   @override
@@ -28,7 +27,7 @@ class _ListTittleCustomState extends State<ListTittleCustom> {
       title: Text(
         widget.title,
         style: TextStyle(
-          fontSize: 14.sp,
+          fontSize: 14,
           color: AppColors.white,
         ),
       ),

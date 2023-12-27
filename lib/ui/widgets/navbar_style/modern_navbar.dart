@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -15,24 +14,24 @@ class _ModernNavbarState extends State<ModernNavbar> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: 8.w,
+        horizontal: 8,
       ),
       decoration: BoxDecoration(
         color: AppColors.bg_02,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: GNav(
         gap: 4,
-        iconSize: 24.sp,
+        iconSize: 24,
         padding: EdgeInsets.symmetric(
-          horizontal: 12.w,
-          vertical: 20.h,
+          horizontal: 12,
+          vertical: 20,
         ),
         // backgroundColor: Color(0xFF191D1F),
         color: AppColors.green,
         activeColor: AppColors.green,
         textStyle: TextStyle(
-          fontSize: 12.sp,
+          fontSize: 12,
           color: AppColors.green,
         ),
         tabs: [

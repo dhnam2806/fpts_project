@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/widgets/list_content.dart';
 
@@ -68,26 +66,26 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
             style: TextStyle(
               fontFamily: 'Manrope',
               letterSpacing: 1,
-              height: 36.h,
-              fontSize: 24.sp,
+              height: 36,
+              fontSize: 24,
               color: AppColors.white,
               fontWeight: FontWeight.w800,
             ),
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
+          padding: EdgeInsets.symmetric(horizontal: 12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 42.h,
+                height: 42,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     "Lựa chọn tối đa 07 nội dung bạn quan tâm nhất để hiển thị trên màn hình chính",
                     style: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: AppColors.white,
                       fontWeight: FontWeight.w400,
                     ),
@@ -95,7 +93,7 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                 ),
               ),
               SizedBox(
-                height: 16.h,
+                height: 16,
               ),
               Expanded(
                 child: Theme(

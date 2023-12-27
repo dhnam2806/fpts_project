@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -57,18 +56,18 @@ class _SelectedThemeState extends State<SelectedTheme> {
             }).toList(),
           ),
           SizedBox(
-            height: 16.h,
+            height: 16,
           ),
           _buildIndicator(),
           SizedBox(
-            height: 12.h,
+            height: 12,
           ),
           Text(
             'Bản hoà sắc mang hơi hướng tương lai',
             style: TextStyle(
               fontFamily: 'Manrope',
               color: AppColors.secondary,
-              fontSize: 12.sp,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -82,9 +81,9 @@ class _SelectedThemeState extends State<SelectedTheme> {
       activeIndex: activeIndex,
       count: listTheme.length,
       effect: SlideEffect(
-        dotHeight: 8.h,
-        dotWidth: 8.w,
-        spacing: 8.w,
+        dotHeight: 8,
+        dotWidth: 8,
+        spacing: 8,
         dotColor: AppColors.surface_04,
         activeDotColor: AppColors.green,
       ),

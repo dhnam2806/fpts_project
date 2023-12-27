@@ -2,7 +2,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 
 class SelectedContainer extends StatefulWidget {
@@ -40,10 +39,10 @@ class _SelectedContainerState extends State<SelectedContainer> {
           Stack(alignment: Alignment.topRight, children: [
             Container(
               width: double.infinity,
-              height: 320.h,
+              height: 320,
               decoration: BoxDecoration(
                 color: widget.color,
-                borderRadius: BorderRadius.circular(8.r),
+                borderRadius: BorderRadius.circular(8),
                 border: isSelected
                     ? Border.all(
                         color: AppColors.green,
@@ -54,8 +53,8 @@ class _SelectedContainerState extends State<SelectedContainer> {
             ),
             Container(
               margin: EdgeInsets.all(8),
-              width: 20.w,
-              height: 20.h,
+              width: 20,
+              height: 20,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: isSelected
@@ -70,19 +69,19 @@ class _SelectedContainerState extends State<SelectedContainer> {
                   ? Icon(
                       Icons.check,
                       color: Colors.white,
-                      size: 16.sp,
+                      size: 16,
                     )
                   : null,
             ),
           ]),
           SizedBox(
-            height: 12.h,
+            height: 12,
           ),
           Text(
             widget.title,
             style: TextStyle(
               fontFamily: 'Manrope',
-              fontSize: 14.sp,
+              fontSize: 14,
               color: isSelected ? AppColors.green : AppColors.secondary,
               fontWeight: FontWeight.w700,
             ),

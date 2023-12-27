@@ -1,17 +1,16 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:fpts_product/const/app_colors.dart';
 
 class TextBoxCus extends StatelessWidget {
-  String title;
-  Function() onTap;
+  final title;
+  final onTap;
   TextBoxCus({
     Key? key,
-    required this.title,
-    required this.onTap,
+    this.title,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -19,14 +18,15 @@ class TextBoxCus extends StatelessWidget {
     return GestureDetector(
       onTap: () => onTap(),
       child: Container(
-        height: 48.h,
-        margin: EdgeInsets.only(bottom: 12.h),
-        padding: EdgeInsets.symmetric(horizontal: 8.w),
+        height: 48,
+        margin: EdgeInsets.only(bottom: 12),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: AppColors.surface_02,
-          borderRadius: BorderRadius.circular(16.r),
+          borderRadius: BorderRadius.circular(16),
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Expanded(
             child: Text(
               title,

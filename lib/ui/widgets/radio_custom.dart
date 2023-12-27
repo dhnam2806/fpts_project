@@ -1,22 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:fpts_product/const/app_colors.dart';
 
 class RadioCustom extends StatefulWidget {
-  int value;
-  int groupValue;
-  String title;
-  String description;
-  void Function(int) onChanged;
-  RadioCustom({
+  final value;
+  final groupValue;
+  final title;
+  final description;
+  final onChanged;
+
+  const RadioCustom({
     Key? key,
-    required this.value,
-    required this.groupValue,
-    required this.title,
-    required this.description,
-    required this.onChanged,
+    this.value,
+    this.groupValue,
+    this.title,
+    this.description,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -42,13 +43,13 @@ class _RadioCustomState extends State<RadioCustom> {
         ),
         decoration: BoxDecoration(
           color: AppColors.bg_02,
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Row(
           children: [
             Container(
-              width: 16.w,
-              height: 16.h,
+              width: 16,
+              height: 16,
               margin: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -65,7 +66,7 @@ class _RadioCustomState extends State<RadioCustom> {
               ),
             ),
             SizedBox(
-              width: 12.w,
+              width: 12,
             ),
             Expanded(
               child: Column(
@@ -75,20 +76,20 @@ class _RadioCustomState extends State<RadioCustom> {
                     widget.title,
                     style: TextStyle(
                       fontFamily: 'Manrope',
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       color: AppColors.header,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   SizedBox(
-                    height: 4.h,
+                    height: 4,
                   ),
                   Container(
                     child: Text(
                       widget.description,
                       style: TextStyle(
                         fontFamily: 'Manrope',
-                        fontSize: 12.sp,
+                        fontSize: 12,
                         color: AppColors.secondary,
                         fontWeight: FontWeight.w500,
                       ),

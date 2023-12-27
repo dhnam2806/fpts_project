@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/widgets/radio_custom.dart';
 import 'package:fpts_product/ui/widgets/selected_container.dart';
@@ -37,7 +36,7 @@ class _ScreenModeState extends State<ScreenMode> {
           style: TextStyle(
             fontFamily: 'Manrope',
             letterSpacing: 1,
-            fontSize: 24.sp,
+            fontSize: 24,
             color: AppColors.header,
             fontWeight: FontWeight.w800,
           ),
@@ -63,12 +62,12 @@ class _ScreenModeState extends State<ScreenMode> {
               },
             ),
             SizedBox(
-              height: 12.h,
+              height: 12,
             ),
             Container(
               decoration: BoxDecoration(
                 color: AppColors.bg_02,
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
                 children: [
@@ -87,7 +86,7 @@ class _ScreenModeState extends State<ScreenMode> {
                       ? Container()
                       : Container(
                           padding: EdgeInsets.only(
-                              bottom: 12.h, left: 58.w, right: 12.w),
+                              bottom: 12, left: 58, right: 12),
                           child: Row(children: [
                             Expanded(
                               child: SelectedContainer(
@@ -102,7 +101,7 @@ class _ScreenModeState extends State<ScreenMode> {
                                   }),
                             ),
                             SizedBox(
-                              width: 16.w,
+                              width: 16,
                             ),
                             Expanded(
                               child: SelectedContainer(

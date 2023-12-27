@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/screens/swap_theme/swap_theme_style.dart';
 import 'package:fpts_product/ui/widgets/radio_custom.dart';
@@ -37,7 +36,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
             style: TextStyle(
               fontFamily: 'Manrope',
               letterSpacing: 1,
-              fontSize: 24.sp,
+              fontSize: 24,
               color: AppColors.header,
               fontWeight: FontWeight.w800,
             ),
@@ -63,7 +62,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
                 },
               ),
               SizedBox(
-                height: 16.h,
+                height: 16,
               ),
               RadioCustom(
                 value: 1,
@@ -77,7 +76,7 @@ class _SwapThemeSettingState extends State<SwapThemeSetting>
                 },
               ),
               SizedBox(
-                height: 14.h,
+                height: 14,
               ),
               _selectedIndex == 0
                   ? Container()

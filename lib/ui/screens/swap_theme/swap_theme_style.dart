@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/screens/swap_theme/selected_theme.dart';
 
@@ -19,18 +18,18 @@ class _TabBarThemeStyleState extends State<TabBarThemeStyle>
       decoration: BoxDecoration(
         color: AppColors.bg_02,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16.r),
-          topRight: Radius.circular(16.r),
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
         ),
       ),
       child: Column(
         children: [
           Container(
             margin:
-                EdgeInsets.only(top: 12.h, bottom: 16.h, left: 7.w, right: 7.w),
+                EdgeInsets.only(top: 12, bottom: 16, left: 7, right: 7),
             decoration: BoxDecoration(
               color: AppColors.blue_gray_01,
-              borderRadius: BorderRadius.circular(50.r),
+              borderRadius: BorderRadius.circular(50),
             ),
             child: TabBar(
               indicatorColor: AppColors.green,
@@ -41,19 +40,19 @@ class _TabBarThemeStyleState extends State<TabBarThemeStyle>
               controller: _tabController,
               indicatorSize: TabBarIndicatorSize.tab,
               indicatorPadding:
-                  EdgeInsets.symmetric(horizontal: 38.w, vertical: 6.h),
+                  EdgeInsets.symmetric(horizontal: 38, vertical: 6),
               labelStyle: TextStyle(
                 fontFamily: 'Manrope',
-                fontSize: 12.sp,
+                fontSize: 12,
                 fontWeight: FontWeight.w700,
               ),
               unselectedLabelStyle: TextStyle(
                 fontFamily: 'Manrope',
-                fontSize: 12.sp,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
               ),
               labelPadding:
-                  EdgeInsets.symmetric(horizontal: 4.w, vertical: 12.h),
+                  EdgeInsets.symmetric(horizontal: 4, vertical: 12),
               tabs: [
                 Text("Mặc định"),
                 Text("Cổ điển"),

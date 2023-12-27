@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
@@ -59,16 +58,16 @@ class _ClassicNavbarState extends State<ClassicNavbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70.h,
+      height: 70,
       margin: EdgeInsets.symmetric(
-        horizontal: 8.w,
+        horizontal: 8,
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(16),
         child: PersistentTabView(
           context,
           controller: _controller,
-          navBarHeight: 64.h,
+          navBarHeight: 64,
           screens: _buildScreens(),
           items: _navBarsItems(),
           confineInSafeArea: true,

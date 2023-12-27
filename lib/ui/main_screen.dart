@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/screens/home_content/home_content_sceen.dart';
 import 'package:fpts_product/ui/screens/navbar_setting_screen/nav_bar_setting.dart';
@@ -26,8 +25,8 @@ class _MainScreenState extends State<MainScreen> {
             'Danh sách màn hình',
             style: TextStyle(
               letterSpacing: 1,
-              height: 36.h,
-              fontSize: 24.sp,
+              height: 36,
+              fontSize: 24,
               color: AppColors.white,
               fontWeight: FontWeight.w700,
             ),

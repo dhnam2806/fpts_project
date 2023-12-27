@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/bottom_navbar.dart';
@@ -43,7 +42,7 @@ class _NavBarSettingScreenState extends State<NavBarSettingScreen> {
             'Thanh điều hướng',
             style: TextStyle(
               letterSpacing: 1,
-              fontSize: 18.sp,
+              fontSize: 18,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:fpts_product/const/app_colors.dart';
 import 'package:fpts_product/ui/widgets/navbar_style/classic_navbar.dart';
@@ -43,7 +42,7 @@ class _NavBarStyleState extends State<NavBarStyle> {
             'Kiểu thanh điều hướng',
             style: TextStyle(
               letterSpacing: 1,
-              fontSize: 18.sp,
+              fontSize: 18,
               color: AppColors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -80,14 +79,14 @@ class _NavBarStyleState extends State<NavBarStyle> {
                         title: Text(
                           'Hiện đại',
                           style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 14,
                             color: AppColors.white,
                           ),
                         ),
                       ),
                       ModernNavbar(),
                       SizedBox(
-                        height: 20.h,
+                        height: 20,
                       ),
                       RadioListTile(
                         value: 1,
@@ -104,7 +103,7 @@ class _NavBarStyleState extends State<NavBarStyle> {
                         title: Text(
                           'Cổ điển',
                           style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 14,
                             color: AppColors.white,
                           ),
                         ),

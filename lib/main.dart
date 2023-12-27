@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fpts_product/ui/main_screen.dart';
 
 void main() {
@@ -13,28 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return BlocProvider(
-          create: (context) => SelectNavbarBloc(),
-          child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'First Method',
-              home: child,
-              builder: (context, child) {
-                return MediaQuery(
-                  data: MediaQuery.of(context).copyWith(
-                    textScaler: TextScaler.linear(1.0),
-                  ),
-                  child: child!,
-                );
-              }),
-        );
-      },
-      child: MainScreen(),
+    return BlocProvider(
+      create: (context) => SelectNavbarBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'First Method',
+        home: MainScreen(),
+      ),
     );
   }
 }
