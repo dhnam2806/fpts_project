@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fpts_product/bloc/bloc/select_navbar_bloc.dart';
 import 'package:fpts_product/ui/main_screen.dart';
 
 void main() {
@@ -12,13 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SelectNavbarBloc(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'First Method',
-        home: MainScreen(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'First Method',
+      home: MainScreen(),
     );
   }
 }

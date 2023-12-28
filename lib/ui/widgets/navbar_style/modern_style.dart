@@ -12,7 +12,7 @@ class _ModernNavbarStyleState extends State<ModernNavbarStyle> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 14.635),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: AppColors.surface_02,
@@ -23,13 +23,18 @@ class _ModernNavbarStyleState extends State<ModernNavbarStyle> {
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Container(
+          height: 48,
+          padding: const EdgeInsets.symmetric(horizontal: 11),
           child: Row(
             children: [
               Image.asset(
-                'assets/icons/home_icon.png',
+                'assets/icons/home.png',
+              ),
+              SizedBox(
+                width: 8,
               ),
               Column(
-                // mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Trang chủ',
@@ -55,15 +60,19 @@ class _ModernNavbarStyleState extends State<ModernNavbarStyle> {
         ),
         Image.asset(
           'assets/icons/trading.png',
+          height: 48,
         ),
         Image.asset(
-          'assets/icons/order_list.png',
+          'assets/icons/clipboard_text.png',
+          height: 48,
         ),
         Image.asset(
-          'assets/icons/asset.png',
+          'assets/icons/wallet.png',
+          height: 48,
         ),
         Image.asset(
           'assets/icons/menu.png',
+          height: 48,
         ),
       ]),
     );

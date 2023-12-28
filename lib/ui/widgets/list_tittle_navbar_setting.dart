@@ -7,9 +7,9 @@ class ListTittleCustom extends StatefulWidget {
   final onTap;
   const ListTittleCustom({
     super.key,
-     this.title,
-     this.icon,
-     this.onTap,
+    this.title,
+    this.icon,
+    this.onTap,
   });
 
   @override
@@ -20,21 +20,18 @@ class _ListTittleCustomState extends State<ListTittleCustom> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(
-        widget.icon,
-        color: AppColors.gray,
-      ),
+      leading: widget.icon,
       title: Text(
         widget.title,
         style: TextStyle(
+          fontFamily: 'Manrope',
           fontSize: 14,
           color: AppColors.white,
+          fontWeight: FontWeight.w500,
         ),
       ),
-      trailing: Icon(
-        Icons.arrow_forward_ios,
-        size: 20,
-        color: AppColors.gray,
+      trailing: Image.asset(
+        'assets/icons/arrow_right.png',
       ),
       onTap: () {
         widget.onTap();

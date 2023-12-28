@@ -7,6 +7,7 @@ class AppColors {
   
   static const bg_01 = Color(0xFF101315);
   static const bg_02 = Color(0xFF191D1F);
+  static const bg_uncheck_default = Color(0xFF33383F);
   static const bg_default = Color(0xFFEFEFEF);
   static const border_default = Color(0xFF6F767E4D);
   static const input_border_default = Color(0xFF33383F);
